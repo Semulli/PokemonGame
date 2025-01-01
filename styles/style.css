@@ -1,0 +1,85 @@
+.header {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+.body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(90deg, #4f79b9, #274db7, #274db7);
+  background-size: 300% 300%;
+  animation: gradientAnimation 8s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  font-size: 24px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.game-title {
+  font-size: 90px;
+  font-weight: 800;
+  font-family: sans-serif;
+  color: #fff;
+  
+  text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  box-shadow: 4px 4px 6px rgba(0, 6, 12, 0.947);
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.img {
+  width:80px;
+  height: 75px;
+  position: absolute;
+  left: 48px;
+  top: 23px;
+}
+
+.pokemon{
+    width:80px;
+    height: 75px;
+    position: absolute;
+    right: 44px;
+    top: 23px;
+
+}
+
+
+/* ? main game part */
+.main-box{
+  /* width: 100px; */
+  height: 500px;
+  margin-top: 60px;
+  /* text-align: center; */
+border-radius: 40px;
+  background-color: #fff;
+}
