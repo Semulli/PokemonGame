@@ -116,10 +116,10 @@ button{
 
 @keyframes blink-scale {
   0%, 100% {
-    transform: scale(1); /* Normal boyut */
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.1); /* %10 büyüme */
+    transform: scale(1.1); 
   }
 }
 

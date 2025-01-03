@@ -121,10 +121,7 @@ function exitGame() {
 }
 
 if (startBtn) startBtn.addEventListener("click", startGame);
-if (pikachuEl)
-  pikachuEl.addEventListener("click", () => playerChoice("pikachu"));
-if (charmanderEl)
-  charmanderEl.addEventListener("click", () => playerChoice("charmander"));
-if (bulbasaurEl)
-  bulbasaurEl.addEventListener("click", () => playerChoice("bulbasaur"));
+if (pikachuEl) pikachuEl.addEventListener("click", () => playerChoice("pikachu"));
+if (charmanderEl) charmanderEl.addEventListener("click", () => playerChoice("charmander"));
+if (bulbasaurEl) bulbasaurEl.addEventListener("click", () => playerChoice("bulbasaur"));
 if (exitBtn) exitBtn.addEventListener("click", exitGame);
