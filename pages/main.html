@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/" />
     <link
       rel="icon"
       href="https://cdn6.f-cdn.com/contestentries/2240388/46077244/6447f05252fbe_thumb900.jpg"
@@ -21,24 +21,82 @@
       crossorigin="anonymous"
     />
   </head>
-  <body class="bg-dark">
-   
-    <div class="container bg-light mt-5">
+  <body class="body">
+    <main>
+      <div class="container bg-light p-5 rounded shadow">
+        <div class="row">
+          <div class="col-4">
+            <div class="card shadow" style="width: 190px; border: none">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Pokemon_Trading_Card_Game_cardback.jpg/220px-Pokemon_Trading_Card_Game_cardback.jpg"
+                class="card-img-top user"
+                id="playerCard"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text" id="playerChoice">Your choice: ...</p>
+                <p id="scoreP"></p>
+              </div>
+            </div>
+          </div>
 
-      <div class="row  "></div>
-    </div>
+          <div class="col-4">
+            <div
+              class="card"
+              style="width: 190px; border: none; background-color: #fff"
+            >
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/019/541/245/non_2x/vs-icons-illustration-versus-icons-symbol-vector.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+            </div>
+          </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
+          <div class="col-4">
+            <div class="card shadow" style="width: 190px; border: none">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Pokemon_Trading_Card_Game_cardback.jpg/220px-Pokemon_Trading_Card_Game_cardback.jpg"
+                class="card-img-top computer"
+                id="computerCard"
+                alt="..."
+              />
+              <div class="card-body">
+                <p class="card-text" id="computerChoice">Machine choice: ...</p>
+                <p id="scoreM"></p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <script src="../script.js"></script>
+        <div class="choices">
+          <button
+            type="button"
+            class="btn btn-warning game-btn"
+            id="pikachuBtn"
+          >
+            Pikachu</button
+          ><button
+            type="button"
+            class="btn btn-warning game-btn"
+            id="charmanderBtn"
+          >
+            Charmander</button
+          ><button
+            type="button"
+            class="btn btn-warning game-btn"
+            id="bulbasaurBtn"
+          >
+            Bulbasaur
+          </button>
+        </div>
+
+        <p class="text-center text-dark pt-5" id="results">results....</p>
+
+        <button type="button "  class="btn btn-danger" id="exitBtn"> Exit game</button>
+      </div>
+    </main>
+
+    <script src="../script.js" ></script>
   </body>
 </html>

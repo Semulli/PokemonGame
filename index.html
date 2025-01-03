@@ -18,21 +18,46 @@
       crossorigin="anonymous"
     />
   </head>
+ 
   <body class="body">
+    <div class="pokeball">
+      <div class="top-half"></div>
+      <div class="bottom-half"></div>
+      <div class="center-circle"></div>
+      <div class="center-button"></div>
+    </div>
+
     <main>
       <div class="box">
         <h1 class="game-title">Pokemon Game</h1>
-        <img class="img"
+        <img
+          class="img"
           src="https://cdn.pixabay.com/photo/2016/09/01/09/31/pokemon-1635610_640.png"
           alt=""
         />
-        <img class="pokemon"
-        src="https://cdn.pixabay.com/photo/2016/09/01/09/31/pokemon-1635610_640.png"
-        alt=""
-      />
-        <button type="button" class="btn btn-danger"  >Start game</button>
+        <img
+          class="pokemon"
+          src="https://cdn.pixabay.com/photo/2016/09/01/09/31/pokemon-1635610_640.png"
+          alt=""
+        />
+
+        <button type="button" class="btn btn-danger button" id="btn">
+          Start game
+        </button>
+
+        
+      </div>
+
+      <div class="progress"  id="progress" aria-label="Animated striped example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar progress-bar-striped progress-bar-animated text-bg-danger" style="width: 0%">0</div>
       </div>
     </main>
+    <div class="pokeball">
+      <div class="top-half"></div>
+      <div class="bottom-half"></div>
+      <div class="center-circle"></div>
+      <div class="center-button"></div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

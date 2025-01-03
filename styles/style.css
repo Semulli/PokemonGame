@@ -8,9 +8,10 @@
 .body {
   margin: 0;
   height: 100vh;
-  background: linear-gradient(90deg, #4f79b9, #274db7, #274db7);
-  background-size: 300% 300%;
-  animation: gradientAnimation 8s ease infinite;
+  background: linear-gradient(90deg, #82a3c4, #367195, #184f71);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +20,7 @@
   font-size: 24px;
 }
 
-@keyframes gradientAnimation {
+@keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
@@ -31,17 +32,95 @@
   }
 }
 
+.pokeball {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid black;
+  overflow: hidden;
+  animation: spin 2s linear infinite; 
+}
+
+
+.top-half {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: rgb(165, 7, 7);
+  
+  top: 0;
+}
+
+
+.bottom-half {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: white;
+ 
+  bottom: 0;
+}
+
+
+.center-circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border: 5px solid black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.center-button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .game-title {
   font-size: 90px;
   font-weight: 800;
   font-family: sans-serif;
-  color: #fff;
-  
+  color: #000;
   text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.5);
 }
 
-button {
+.button {
   box-shadow: 4px 4px 6px rgba(0, 6, 12, 0.947);
+  animation: blink-scale 1s infinite;
+}
+
+button{
+  box-shadow: 4px 4px 6px rgba(0, 6, 12, 0.947);
+}
+
+
+@keyframes blink-scale {
+  0%, 100% {
+    transform: scale(1); /* Normal boyut */
+  }
+  50% {
+    transform: scale(1.1); /* %10 büyüme */
+  }
 }
 
 .box {
@@ -57,29 +136,64 @@ button {
 }
 
 .img {
-  width:80px;
+  width: 80px;
   height: 75px;
   position: absolute;
   left: 48px;
   top: 23px;
 }
 
-.pokemon{
-    width:80px;
-    height: 75px;
-    position: absolute;
-    right: 44px;
-    top: 23px;
-
+.pokemon {
+  width: 80px;
+  height: 75px;
+  position: absolute;
+  right: 44px;
+  top: 23px;
 }
-
 
 /* ? main game part */
-.main-box{
-  /* width: 100px; */
-  height: 500px;
-  margin-top: 60px;
-  /* text-align: center; */
-border-radius: 40px;
-  background-color: #fff;
+
+.choices {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
 }
+
+p {
+  font-size: 15px;
+}
+
+
+.computer, .user{
+  
+  animation: spin 3s linear infinite; 
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+ 
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+} 
+
+.game-btn{
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 5px rgb(120, 120, 41);
+  }
+  50% {
+    box-shadow: 0 0 20px rgb(109, 109, 46);
+  }
+  100% {
+    box-shadow: 0 0 5px rgb(77, 77, 21);
+  }
+}
+
