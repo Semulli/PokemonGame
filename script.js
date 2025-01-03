@@ -9,6 +9,7 @@ const result = document.querySelector("#results");
 const scorePlayerEl = document.querySelector("#scoreP");
 const scoreComputerEl = document.querySelector("#scoreM");
 const exitBtn = document.querySelector("#exitBtn");
+const playAgainBtn = document.querySelector("#playAgain");
 
 if (exitBtn) {
   exitBtn.style.display = "none";
@@ -16,15 +17,18 @@ if (exitBtn) {
 if (progressBar) {
   progressBar.style.display = "none";
 }
-const pikachuSound = new Audio("../audio/Voicy_Pikachu.mp3")
-const cahrmanderSound = new Audio("../audio/Voicy_Charmander🔥 .mp3")
-const bulbaseurSound = new Audio("../audio/Voicy_4- Bulbasaur Sounds_ Pokemon Snap.mp3")
+
+
+const pikachuSound = new Audio("../audio/Voicy_Pikachu.mp3");
+const cahrmanderSound = new Audio("../audio/Voicy_Charmander🔥 .mp3");
+const bulbaseurSound = new Audio(
+  "../audio/Voicy_4- Bulbasaur Sounds_ Pokemon Snap.mp3"
+);
 const victorySound = new Audio("../audio/victory-85561.mp3");
 const loseSound = new Audio("../audio/videogame-death-sound-43894.mp3");
 const audio = new Audio("./audio/Voicy_Pokemon Theme.mp3");
 
 const pokemons = ["pikachu", "charmander", "bulbasaur"];
-
 
 const pokemonImgs = {
   pikachu: "https://i.scdn.co/image/ab67616d0000b273cfeae645958e9248abff0710",
@@ -64,7 +68,7 @@ function playerChoice(choice) {
   playerChc.textContent = `Your choice: ${choice}`;
   document.querySelector("#playerCard").src = pokemonImgs[choice];
 
-  playCharacterSounds(choice)
+  playCharacterSounds(choice);
   const computerChoice = randomChoice();
   computerChc.textContent = `Machine choice: ${computerChoice}`;
   document.querySelector("#computerCard").src = pokemonImgs[computerChoice];
@@ -101,14 +105,13 @@ function updateScores() {
   scoreComputerEl.textContent = `Computer score: ${points.computer}`;
 }
 
-function playCharacterSounds(choice){
-  if(choice === "pikachu"){
-    pikachuSound.play()
-  }
-  else if(choice === "charmander"){
-    cahrmanderSound.play()
-  } else{      
-    bulbaseurSound.play()
+function playCharacterSounds(choice) {
+  if (choice === "pikachu") {
+    pikachuSound.play();
+  } else if (choice === "charmander") {
+    cahrmanderSound.play();
+  } else {
+    bulbaseurSound.play();
   }
 }
 
@@ -122,12 +125,19 @@ function checkGame() {
     loseSound.play();
     disableGame();
   }
+  if (playAgainBtn) {
+    playAgainBtn.style.display = "block";
+  }
 }
 
 function disableGame() {
   pikachuEl.disabled = true;
   charmanderEl.disabled = true;
   bulbasaurEl.disabled = true;
+
+  if (playAgainBtn) {
+    playAgainBtn.style.display = "block";
+  }
   if (exitBtn) {
     exitBtn.style.display = "block";
   }
@@ -136,9 +146,40 @@ function disableGame() {
 function exitGame() {
   window.location.href = "../index.html";
 }
+function resetGame() {
+  points.player = 0;
+  points.computer = 0;
+  updateScores();
+
+  result.textContent = "Game Reset! Let's Play Again!💃🏻";
+  playerChc.textContent = "";
+  computerChc.textContent = "";
+  document.querySelector("#playerCard").src =
+    "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Pokemon_Trading_Card_Game_cardback.jpg/220px-Pokemon_Trading_Card_Game_cardback.jpg";
+  document.querySelector("#computerCard").src =
+    "https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/Pokemon_Trading_Card_Game_cardback.jpg/220px-Pokemon_Trading_Card_Game_cardback.jpg";
+
+  pikachuEl.disabled = false;
+  charmanderEl.disabled = false;
+  bulbasaurEl.disabled = false;
+
+  if (playAgainBtn) {
+    playAgainBtn.style.display = "none";
+  }
+
+  if (exitBtn) {
+    exitBtn.style.display = "none";
+  }
+}
 
 if (startBtn) startBtn.addEventListener("click", startGame);
-if (pikachuEl) pikachuEl.addEventListener("click", () => playerChoice("pikachu"));
-if (charmanderEl) charmanderEl.addEventListener("click", () => playerChoice("charmander"));
-if (bulbasaurEl) bulbasaurEl.addEventListener("click", () => playerChoice("bulbasaur"));
+if (pikachuEl)
+  pikachuEl.addEventListener("click", () => playerChoice("pikachu"));
+if (charmanderEl)
+  charmanderEl.addEventListener("click", () => playerChoice("charmander"));
+if (bulbasaurEl)
+  bulbasaurEl.addEventListener("click", () => playerChoice("bulbasaur"));
 if (exitBtn) exitBtn.addEventListener("click", exitGame);
+if (playAgainBtn) {
+  playAgainBtn.addEventListener("click", resetGame);
+}
