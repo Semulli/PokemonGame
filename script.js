@@ -16,11 +16,16 @@ if (exitBtn) {
 if (progressBar) {
   progressBar.style.display = "none";
 }
-const victorySound = new Audio("./audio/victory-85561.mp3");
-const loseSound = new Audio("./audio/videogame-death-sound-43894.mp3");
+const pikachuSound = new Audio("../audio/Voicy_Pikachu.mp3")
+const cahrmanderSound = new Audio("../audio/Voicy_Charmander🔥 .mp3")
+const bulbaseurSound = new Audio("../audio/Voicy_4- Bulbasaur Sounds_ Pokemon Snap.mp3")
+const victorySound = new Audio("../audio/victory-85561.mp3");
+const loseSound = new Audio("../audio/videogame-death-sound-43894.mp3");
 const audio = new Audio("./audio/Voicy_Pokemon Theme.mp3");
 
 const pokemons = ["pikachu", "charmander", "bulbasaur"];
+
+
 const pokemonImgs = {
   pikachu: "https://i.scdn.co/image/ab67616d0000b273cfeae645958e9248abff0710",
   charmander: "https://img.pokemondb.net/sprites/home/normal/2x/charmander.jpg",
@@ -59,6 +64,7 @@ function playerChoice(choice) {
   playerChc.textContent = `Your choice: ${choice}`;
   document.querySelector("#playerCard").src = pokemonImgs[choice];
 
+  playCharacterSounds(choice)
   const computerChoice = randomChoice();
   computerChc.textContent = `Machine choice: ${computerChoice}`;
   document.querySelector("#computerCard").src = pokemonImgs[computerChoice];
@@ -93,6 +99,17 @@ function chooseWinner(player, computer) {
 function updateScores() {
   scorePlayerEl.textContent = `Player score: ${points.player}`;
   scoreComputerEl.textContent = `Computer score: ${points.computer}`;
+}
+
+function playCharacterSounds(choice){
+  if(choice === "pikachu"){
+    pikachuSound.play()
+  }
+  else if(choice === "charmander"){
+    cahrmanderSound.play()
+  } else{      
+    bulbaseurSound.play()
+  }
 }
 
 function checkGame() {
